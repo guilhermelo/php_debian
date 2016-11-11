@@ -1,7 +1,7 @@
 <?php 
 
 define("USUARIO", 'root');
-define("SENHA", '');
+define("SENHA", 'mysql');
 
 class Conexao{
 

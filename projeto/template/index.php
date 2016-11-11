@@ -5,13 +5,14 @@
 	include_once('../controller/helper.php');
 	
 	$daoProduto = new ProdutoDAO();
-	$daoTipo = new TipoDAO();
-	$daoFornecedor = new FornecedorDAO();
 
 	$produtos = $daoProduto->selecionaProdutos();
 
+	$daoTipo = new TipoDAO();
 	$tipos = $daoTipo->selecionaTipos();
+	$daoFornecedor = new FornecedorDAO();
 	$fornecedores = $daoFornecedor->selecionaFornecedores();
+	
 	
  ?>
 <!DOCTYPE html>

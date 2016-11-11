@@ -1,6 +1,7 @@
 <?php 
 	include_once('../model/Produto.class.php');
 	include_once('../dao/ProdutoDAO.class.php');
+        include_once('../controller/helper.php');
 	
 	$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
 	$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
@@ -28,6 +29,7 @@
 		$produto->setNome($nome);
 		$produto->setValor($valor);
 		$produto->setValidade(ajustaData($validade));
+
 		$produto->getTipo()->setId($tipo);
 		$produto->getFornecedor()->setId($fornecedor);
 

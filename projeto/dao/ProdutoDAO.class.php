@@ -4,7 +4,6 @@
 	include_once '../model/Tipo.class.php';
 	include_once '../model/Fornecedor.class.php';
 
-
 	class ProdutoDAO{
 		
 		public function insereProduto(Produto $produto){
@@ -34,11 +33,11 @@
 
 				$pdo = Conexao::getConexao();
 
-				$query = "select p.ID, p.NOME, p.VALOR, p.VALIDADE, t.DESCRICAO, t.ID AS TID, f.NOME AS FNOME, f.ID AS FID  from produto p inner join tipo t on (p.TIPO = t.ID) inner join fornecedor f on (p.FORNECEDOR = f.ID)";
+				$query = "select p.ID, p.NOME, p.VALOR, p.VALIDADE, t.DESCRICAO, t.ID AS TID, f.NOME AS FNOME, f.ID AS FID  from PRODUTO p inner join TIPO t on (p.TIPO = t.ID) inner join FORNECEDOR f on (p.FORNECEDOR = f.ID)";
 
 				$stmt = $pdo->prepare($query);
 
-				$stmt->execute();
+				$tmt->execute();
 
 				$resultado = new ArrayObject();
 
@@ -56,11 +55,11 @@
 					$fornecedor->setNome($row['FNOME']);
 					$fornecedor->setId($row['FID']);
 					$produto->setFornecedor($fornecedor);
+					
+					var_dump($produto);
 
 					$resultado->append($produto);
 				}
-
-				return $resultado;
 
 			}catch(PDOException $e){
 				"<script>alert('Erro: {$e->getMessage()}') </script>";
@@ -93,7 +92,7 @@
 
 				$pdo = Conexao::getConexao();
 
-				$query = "select p.ID, p.NOME, p.VALOR, p.VALIDADE, t.DESCRICAO, t.ID AS TID, f.NOME AS FNOME, f.ID AS FID  from produto p inner join tipo t on (p.TIPO = t.ID) inner join fornecedor f on (p.FORNECEDOR = f.ID) where p.ID = :idProduto and t.ID = :idTipo and f.ID = :idFornecedor";
+				$query = "select p.ID, p.NOME, p.VALOR, p.VALIDADE, t.DESCRICAO, t.ID AS TID, f.NOME AS FNOME, f.ID AS FID  from PRODUTO p inner join TIPO t on (p.TIPO = t.ID) inner join FORNECEDOR f on (p.FORNECEDOR = f.ID) where p.ID = :idProduto and t.ID = :idTipo and f.ID = :idFornecedor";
 
 				$stmt = $pdo->prepare($query);
 				$stmt->bindValue(':idProduto', $idProduto);
@@ -154,6 +153,5 @@
 			}
 		}
 	}
-
  ?>
 
