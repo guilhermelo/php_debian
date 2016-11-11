@@ -20,6 +20,13 @@
 	<title>Produtos</title>
 </head>
 <body>
+	<a href="../template/fornecedor.php">Cadastrar Fornecedor</a>
+	<br>
+	<br>
+	<a href="../template/tipo.php">Cadastrar Tipo</a>
+	<br>
+	<br>
+	<br>
 	<h1>Cadastro de Produtos</h1>
 	<form action="../controller/ProdutoInsercaoController.php" method="post">
 		<label>Nome: </label>

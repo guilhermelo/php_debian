@@ -27,7 +27,7 @@
 		$produto->setId($id);
 		$produto->setNome($nome);
 		$produto->setValor($valor);
-		$produto->setValidade($validade);
+		$produto->setValidade(ajustaData($validade));
 		$produto->getTipo()->setId($tipo);
 		$produto->getFornecedor()->setId($fornecedor);
 
