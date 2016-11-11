@@ -32,7 +32,7 @@
 			<tr>
 				<th>Código</th>
 				<th>Descrição</th>
-				<th colspan="2">Opções</th>
+				<th colspan="2">Ações</th>
 			</tr>
 		</thead>
 		<tbody>

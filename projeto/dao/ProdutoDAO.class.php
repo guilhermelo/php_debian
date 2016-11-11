@@ -37,7 +37,7 @@
 
 				$stmt = $pdo->prepare($query);
 
-				$tmt->execute();
+				$stmt->execute();
 
 				$resultado = new ArrayObject();
 
@@ -55,11 +55,11 @@
 					$fornecedor->setNome($row['FNOME']);
 					$fornecedor->setId($row['FID']);
 					$produto->setFornecedor($fornecedor);
-					
-					var_dump($produto);
 
 					$resultado->append($produto);
 				}
+
+				return $resultado;
 
 			}catch(PDOException $e){
 				"<script>alert('Erro: {$e->getMessage()}') </script>";

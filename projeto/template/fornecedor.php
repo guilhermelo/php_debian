@@ -37,13 +37,14 @@
 	<br>
 	<br>
 	<br>
-	<table>
+	<table border="1px">
 		<thead>
 			<tr>
 				<th>Código</th>
 				<th>Nome</th>
 				<th>Endereço</th>
 				<th>CNPJ</th>
+				<th colspan="2">Ações</th>
 			</tr>
 		</thead>
 		<tbody>
